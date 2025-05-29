@@ -5,7 +5,6 @@ def main():
 
     fred = turtle.Turtle()
     fred.speed(0)
-    fred._tracer(0)
 
     draw_rec(fred, 10, 10, 40, 60)
 
@@ -23,7 +22,7 @@ def draw_rec(tur, x, y, length, width, color='white'):
     tur.pendown()
 
     tur.fillcolor(color)
-    tur.beginfill()
+    tur.begin_fill()
 
     for i in range(2):
         tur.fd(length)
@@ -31,7 +30,7 @@ def draw_rec(tur, x, y, length, width, color='white'):
         tur.fd(width)
         tur.right(90)
 
-    tur.endfill()
+    tur.end_fill()
 
 
 def draw_star(tur, x, y, size, color='white'):

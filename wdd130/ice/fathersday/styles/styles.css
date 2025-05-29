@@ -63,11 +63,11 @@ main h1 {
     transform: translate(-50%, -50%);
     color: #ffffff;
     font-family: 'Dancing Script', cursive;
-    font-size: 4.5em; /* Adjusted size for cursive font visibility */
+    font-size: 8em; /* Adjusted size for cursive font visibility */
     text-align: center;
     text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.9); /* Stronger shadow for readability over image */
     z-index: 10; /* Above image, below header */
-    width: 90%; /* Prevent text from touching screen edges */
+    width: 3.5em; /* Prevent text from touching screen edges */
     margin: 0; /* Reset any default margins */
 }
 

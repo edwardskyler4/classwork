@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>My Favorite Devotionals</title>
+  <link rel="stylesheet" href="styles/styles.css" />
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <div class="header-image">
+        <h1>My Favorite<br>Devotionals</h1>
+      </div>
+    </header>
+    <main>
+      <div class="content-box">
+        <!-- Add your devotional content here -->
+        <h2>Favorites:</h2> 
+        <table>
+            <thead>
+            <tr>
+              <th>Speaker</th>
+              <th>Title</th>
+              <th>Location</th>
+              <th>Year</th>
+            </tr>
+            </thead>
+
+            <tbody>
+            <tr>
+              <td>Phillip D. Rash</td>
+              <td>Looking to the Margins: Creating Belonging</td>
+              <td>BYU-Provo</td>
+              <td>2019</td>
+            </tr>
+
+            <tr>
+              <td>M. Russell Ballard</td>
+              <td>Follow the Doctrine and Gospel of Christ</td>
+              <td>BYU-Provo</td>
+              <td>2010</td>
+            </tr>
+
+            <tr>
+              <td>H. David Burton</td>
+              <td>The Living Water of Jesus Christ</td>
+              <td>BYU-Provo</td>
+              <td>2000</td>
+            </tr>
+            </tbody>
+         </table>
+
+         <form>
+          <fieldset>
+            <legend>Add your favorite devotional!</legend>
+            <div id="1">
+              <label for="speaker">Speaker</label>
+              <input type="text" name="speaker" id="speaker">
+            </div>
+              
+            <div id="2">
+              <label for="title">Title</label>
+              <input type="text" name="title" id="title">
+            </div>
+
+            <div id="3">
+              <label for="location">Location</label>
+              <input type="text" name="location" id="location">
+            </div>
+
+            <div id="4">
+              <label for="year">Year</label>
+              <input type="text" name="year" id="year">
+            </div>
+
+            <div id="submit">
+              <input type="submit" value="Submit">
+            </div>
+          </fieldset>
+         </form>
+
+        </div>
+    </main>
+  </div>
+</body>
+</html>
