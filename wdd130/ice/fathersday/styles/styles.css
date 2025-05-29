@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap');
+
 body {
     background-color: #2a2a2a; /* Dark gray for sunset base */
     margin: 0;
@@ -60,7 +62,8 @@ main h1 {
     left: 50%;
     transform: translate(-50%, -50%);
     color: #ffffff;
-    font-size: 3.5em; /* Prominent heading */
+    font-family: 'Dancing Script', cursive;
+    font-size: 4.5em; /* Adjusted size for cursive font visibility */
     text-align: center;
     text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.9); /* Stronger shadow for readability over image */
     z-index: 10; /* Above image, below header */
@@ -118,7 +121,8 @@ section h2 {
     border-bottom: 2px solid #FF8C00; /* Darker orange underline */
     padding-bottom: 10px;
     margin-bottom: 20px; /* Space below heading */
-    font-size: 2.2em;
+    font-family: 'Dancing Script', cursive;
+    font-size: 2.8em; /* Adjusted size for cursive font */
     text-align: left; /* Align section titles to the left of their content block */
 }
 
