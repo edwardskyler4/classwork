@@ -17,8 +17,9 @@ body {
 }
 
 header {
-    background-color: rgba(20, 20, 20, 0.85); /* Dark semi-transparent background */
+    background-color: rgba(20, 20, 20, 0.75); /* Dark semi-transparent background */
     padding: 10px 0; /* Vertical padding for header */
+    height: 2em;
     color: #f5f5f5; /* Light text color for nav items (default) */
     position: fixed;
     top: 0;
@@ -33,14 +34,15 @@ nav ul {
     padding: 0;
     margin: 0;
     text-align: center;
+    display: flex;
+    justify-content: space-around;
 }
 
 nav ul li {
-    display: inline-block;
-    margin: 0 20px; /* Spacing between nav items */
     font-size: 1.1em; /* Font size for nav items */
     color: #f5f5f5; /* Explicitly set light color for nav items */
     cursor: pointer;
+    align-items: center;
 }
 
 nav ul li:hover {
@@ -71,6 +73,7 @@ main img {
     display: block;
     width: 100%; /* Full width of its container */
     height: calc(100vh - 40px); /* Full viewport height minus header space */
+    object-position: center top;
     object-fit: cover; /* Cover the area, crop if needed, maintain aspect ratio */
     margin: 0; /* Remove previous margins */
     border-radius: 0; /* Remove previous border-radius */
