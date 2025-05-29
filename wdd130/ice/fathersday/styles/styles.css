@@ -1,23 +1,31 @@
 body {
-    background-color: #f0f8ff; /* AliceBlue */
+    background-color: #2a2a2a; /* Dark gray for sunset base */
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
-    color: #333;
+    color: #e0e0e0; /* Light default text color for dark theme */
+    padding-top: 40px; /* Space for fixed header, based on 1.1em font + 10px padding * 2 */
 }
 
 #wrapper {
-    background-color: #ffffff; /* White */
-    margin: 20px auto;
-    max-width: 960px; /* Max width for larger screens */
-    padding: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    /* Wrapper becomes a full-width container, specific content styling handled by inner elements */
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: transparent; /* No background for wrapper itself */
+    box-shadow: none;
 }
 
 header {
-    background-color: #4682b4; /* SteelBlue */
-    padding: 10px 0;
-    color: white;
+    background-color: rgba(20, 20, 20, 0.85); /* Dark semi-transparent background */
+    padding: 10px 0; /* Vertical padding for header */
+    color: #f5f5f5; /* Light text color for nav items (default) */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000; /* Ensure header is above other content */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.5); /* Subtle shadow for depth */
 }
 
 nav ul {
@@ -29,46 +37,100 @@ nav ul {
 
 nav ul li {
     display: inline-block;
-    margin: 0 15px;
-    font-size: 1.2em;
+    margin: 0 20px; /* Spacing between nav items */
+    font-size: 1.1em; /* Font size for nav items */
+    color: #f5f5f5; /* Explicitly set light color for nav items */
+    cursor: pointer;
 }
 
 nav ul li:hover {
-    text-decoration: underline;
+    text-decoration: none;
+    color: #ff8c00; /* Sunset orange for hover */
+}
+
+main { /* Add relative positioning for H1 */
+    position: relative;
+    /* Main will contain the hero image and then the sections */
 }
 
 main h1 {
+    position: absolute;
+    top: calc((100vh - 40px) / 2); /* Vertically center in the viewport area below header */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #ffffff;
+    font-size: 3.5em; /* Prominent heading */
     text-align: center;
-    color: #2c3e50; /* Dark Slate Gray */
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.9); /* Stronger shadow for readability over image */
+    z-index: 10; /* Above image, below header */
+    width: 90%; /* Prevent text from touching screen edges */
+    margin: 0; /* Reset any default margins */
 }
 
 main img {
     display: block;
-    margin: 20px auto;
-    max-width: 100%;
-    height: auto;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    width: 100%; /* Full width of its container */
+    height: calc(100vh - 40px); /* Full viewport height minus header space */
+    object-fit: cover; /* Cover the area, crop if needed, maintain aspect ratio */
+    margin: 0; /* Remove previous margins */
+    border-radius: 0; /* Remove previous border-radius */
+    box-shadow: none; /* Remove previous box-shadow */
+    /* This image acts as the hero background */
 }
 
 section {
-    margin-bottom: 20px;
-    padding: 15px;
-    background-color: #f9f9f9; /* Very light gray for sections */
-    border-left: 5px solid #4682b4; /* SteelBlue accent */
+    /* Sections will appear below the full-screen image */
+    padding: 40px 0; /* Vertical padding; horizontal padding handled by inner content block */
+    color: #e0e0e0; /* Light text for readability */
+    border-top: 8px solid; /* Default border, color specified by nth-of-type */
+    margin-bottom: 0; /* Stack directly */
+}
+
+/* Style for the content block (h2, p) within each section */
+section > h2, section > p {
+    max-width: 900px; /* Max width for text content */
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 20px; /* Add some horizontal padding for the content block */
+    padding-right: 20px;
+}
+
+/* Assigning different border and background colors for a sunset progression */
+main section:nth-of-type(1) { /* Food */
+    background-color: #402A2A; /* Dark reddish-brown */
+    border-top-color: #FF8C00; /* DarkOrange */
+}
+
+main section:nth-of-type(2) { /* Family */
+    background-color: #3B3140; /* Dark purplish-brown */
+    border-top-color: #FF4500; /* OrangeRed */
+}
+
+main section:nth-of-type(3) { /* Fun */
+    background-color: #2A2A40; /* Dark bluish-brown */
+    border-top-color: #DC143C; /* Crimson */
 }
 
 section h2 {
-    color: #4682b4; /* SteelBlue */
-    border-bottom: 2px solid #eeeeee;
-    padding-bottom: 5px;
+    color: #FFA500; /* Orange accent for headings */
+    border-bottom: 2px solid #FF8C00; /* Darker orange underline */
+    padding-bottom: 10px;
+    margin-bottom: 20px; /* Space below heading */
+    font-size: 2.2em;
+    text-align: left; /* Align section titles to the left of their content block */
+}
+
+section p {
+    color: #e0e0e0; /* Ensure paragraph text is light */
+    line-height: 1.6; /* Improve readability */
+    font-size: 1.1em; /* Slightly larger paragraph text */
 }
 
 footer {
     text-align: center;
-    padding: 20px;
-    margin-top: 20px;
-    background-color: #333;
-    color: white;
+    padding: 30px 20px; /* Increased padding */
+    margin-top: 0; /* Remove top margin as sections don't have bottom margin */
+    background-color: #1c1c1c; /* Very dark gray, almost black */
+    color: #aaaaaa; /* Lighter gray for footer text */
     font-size: 0.9em;
 }
