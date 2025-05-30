@@ -27,11 +27,11 @@ def test_pressure_lost_from_fittings1():
     assert pressure_loss_from_fittings(0, 3) == approx(0, 0.001)
     assert pressure_loss_from_fittings(1.65, 0) == approx(0, 0.001)
 def test_pressure_lost_from_fittings3():
-    assert pressure_loss_from_fittings(1.65, 2) == approx(-0.109, 0.001)
+    assert pressure_loss_from_fittings(1.65, 2) == approx(-0.109, abs=0.001)
 def test_pressure_lost_from_fittings4():
-    assert pressure_loss_from_fittings(1.75, 2) == approx(-0.122, 0.001)
+    assert pressure_loss_from_fittings(1.75, 2) == approx(-0.122, abs=0.001)
 def test_pressure_lost_from_fittings5():
-    assert pressure_loss_from_fittings(1.75, 5) == approx(-0.306, 0.001)
+    assert pressure_loss_from_fittings(1.75, 5) == approx(-0.306, abs=0.001)
 
 def test_reynolds_number():
     assert reynolds_number(0.048692, 0) == approx(0, 1)
