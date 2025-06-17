@@ -2,10 +2,89 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=\, initial-scale=1.0">
     <title>About Me</title>
+    <link rel="stylesheet" href="./styles/style.css">
 </head>
 <body>
-    This page will be the about me page    
+    <div id="wrapper">
+   <header>
+        <div id="hero">
+            <h1>About Me</h1>
+            <div class="background">
+                <video loop autoplay muted>
+                    <source src="images/dark-water.mp4" alt="">
+                </video>
+            </div>
+        </div>
+
+        <nav>
+            <ul>
+            <li><a href="./index.html"><p>Home</p></a></li>
+            <li><a href="./ice/index.html"><p>ICE</p></a></li>
+            <li><a href="./wwr/index.html" target="_blank"><p>WWR</p></a></li>
+            <li><a href="./about.html"><p>About Me</p></a></li>
+            </ul>
+        </nav>
+    </header> 
+    
+    <main>
+        <h2 class="about-me-h2">Introduction</h2>
+        <p id="intro">
+            Hey! My name is Kyler Edwards. I identify myself as a Son of God, a child of the covenant, and a disciple of Christ, in that order. Then I am a husband to my beautiful wife, a father to my daughter (coming August), and everything else follows. I enjoy quite a few things, such as friends, playing piano, specificity, etymology, strength, exercise, cardio (still coming to terms with that one), light, sleep, reading, coding, Spanish, other cultures (especially latin, polynesian, and african cultures), learning, learning (added again for emphasis), service, giving of myself for others, self-improvement, and interacting with friends. In terms of what's important to me, my list is as follows in order: my relationship with God, my relationship with Jesus Christ, my relationship with my wife, my relationship with my children, and then my relationships with others. When I say that relationships are most important to me, I don't mean that I'm bending over backwards just to make people happy. I mean that people are most important to me. I will always prioritize a person over a task. No task is more important than the wellbeing of a human being. This focus of mine makes me an effective leader, as those I lead feel that I genuinely care about them, which encourages them. This leads to higher productivity and employee retention and a more positive workplace in general.
+        </p>
+
+        <h2 class="about-me-h2">Images</h2>
+        <section id="about-me-images">
+            <img class="image" src="./images/me1.jpg" alt="My wife and I on our wedding day.">
+            <img class="image" src="./images/me2.jpg" alt="A selfie of me.">
+            <img class="image" src="./images/me3.jpg" alt="A dramatic line of men holding one another.">
+            <img class="image" src="./images/me4.jpeg" alt="I tend to fall asleep a lot. Here's me sleeping.">
+            <img class="image" src="./images/me5.jpg" alt="Sleeping with a baby girl, who is also sleeping, on my chest.">
+            <img class="image" src="./images/me6.jpeg" alt="I'm sitting up in a big tree with spider-web-like branches and roots spreading everywhere.">
+        </section>
+    </main>
+    
+    <footer>
+       <ul class="footer-nav">
+           <li>
+               <a href="./index.html"><p>Home</p></a>
+            </li>
+            <li>
+                <a href="./ice/index.html"><p>ICE</p></a>
+            </li>
+            <li>
+                <a href="./wwr/index.html" target="_blank"><p>WWR</p></a>
+            </li>
+            <li>
+                <a href="./about.html"><p>About Me</p></a>
+            </li>
+        </ul>
+
+        <form>
+            <fieldset>
+                <legend>Sign up for my newsletter!</legend>
+                <div>
+                <label for="name">Name:</label><br>
+                <input type="type" id="name" name="name" placeholder="John Smith">
+                </div>
+                <div>
+                <label for="email">Email:</label><br>
+                <input type="type" id="email" name="email" placeholder="johnsmith@john.com">
+                </div>
+                <div>
+                <label for="phone">Phone:</label><br>
+                <input type="tel" name="phone" id="phone" placeholder="123-456-7890">
+                </div>
+                <div id="submit-button">
+                <button type="submit">I want to receive your newsletter!</button>
+                </div>
+            </fieldset>
+        </form>
+
+        <div id="logo"><img src="./images/new_logo.png" alt="Kyler logo."></div>
+
+    </footer>
+   </div>
 </body>
 </html>

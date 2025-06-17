@@ -7,68 +7,137 @@
     <link rel="stylesheet" href="./styles/style.css">
 </head>
 <body>
+    <div id="wrapper">
    <header>
         <div id="hero">
             <h1>Grow With Me</h1>
+            <div class="background">
+                <video loop autoplay muted>
+                    <source src="images/mountain_video.mp4" alt="">
+                </video>
+            </div>
         </div>
 
         <nav>
-            <a id="logo" href="./index.html">
-                <img src="./images/new_logo.png" alt="Kyler logo">
-            </a>
-            <a href="./index.html">Home</a>
-            <a href="./ice/index.html">ICE</a>
-            <a href="./wwr/index.html">WWR</a>
-            <a href="./about.html">About Me</a>
+            <ul>
+            <li><a href="./index.html"><p>Home</p></a></li>
+            <li><a href="./ice/index.html"><p>ICE</p></a></li>
+            <li><a href="./wwr/index.html" target="_blank"><p>WWR</p></a></li>
+            <li><a href="./about.html"><p>About Me</p></a></li>
+            </ul>
         </nav>
-   </header> 
+    </header> 
+    
+    <main>
+        <div id="articles">
+            <section class="article">
+                <h2>Article 1</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas vestibulum, ante sit amet rhoncus commodo, sapien velit aliquam velit, non suscipit ante felis in eros. Aenean sollicitudin turpis at mattis posuere. Fusce blandit posuere laoreet. Vestibulum malesuada eleifend risus, iaculis ultricies ex efficitur eget. Sed ante magna, malesuada eu diam vel, semper tristique sapien. Integer mollis eu ligula consequat vestibulum. Nulla ante metus, lobortis eu accumsan ac, tincidunt in metus. Proin tristique mattis lacinia. In sed suscipit ligula, sed aliquam dolor. Praesent condimentum sodales mauris quis dictum. Aenean at elementum nisl, et scelerisque lacus.<br><br>
+                    
+                Donec bibendum lectus id justo venenatis, ut semper enim tincidunt. Praesent viverra vulputate nulla non fringilla. Praesent vestibulum, ipsum eu sodales commodo, diam eros lobortis diam, eget viverra nisl augue a velit. Duis at enim ac metus tincidunt placerat. Ut id rhoncus tortor. Donec erat quam, pretium nec eros suscipit, auctor blandit magna. Phasellus maximus nunc a nunc rhoncus venenatis. Proin pellentesque aliquet hendrerit. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Donec malesuada pharetra magna eget aliquet.</p>            
+                <img src="images/test-image-1" alt="A dark stairwell.">
+            </section>
+            
+            <section class="article">
+                <h2>Article 2</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ut dolor tincidunt, porta leo in, vestibulum dui. Curabitur eu purus quis ante accumsan fringilla a in ex. Nullam varius volutpat semper. Fusce id orci lacus. Sed vitae euismod eros. Duis porttitor, elit a dapibus suscipit, quam dolor rhoncus dui, sit amet gravida mi nisi vel diam. Pellentesque facilisis faucibus arcu, sit amet vehicula sapien ullamcorper a. Mauris feugiat orci dolor, sed pretium magna hendrerit nec. Sed non vehicula lorem. Maecenas eu sapien purus. Quisque mollis blandit diam vel faucibus. Donec bibendum finibus porttitor. Etiam eu ligula eu erat accumsan posuere. Praesent at semper ex. Vestibulum posuere id orci quis luctus. Pellentesque nec posuere magna.<br><br>
+                
+                Suspendisse rutrum tortor purus, a bibendum lacus convallis in. Etiam nec porta odio. Nullam molestie nibh nec blandit bibendum. Etiam accumsan eu sem non tincidunt. Nulla facilisi. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Ut vitae elit vel nulla convallis consequat a non sem. Nullam aliquet lorem metus, non vestibulum ante dictum quis. Nunc sit amet massa at orci condimentum varius. Quisque sagittis, tortor eget venenatis mollis, purus nibh vulputate lorem, non viverra dolor eros a velit. Morbi turpis sapien, interdum a justo eu, sollicitudin lacinia metus.</p>            
+                <img src="images/test-image-2" alt="An otter beaded with condensation.">
+            </section>
+            
+            <section class="article">
+                <h2>Article 3</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ut dolor tincidunt, porta leo in, vestibulum dui. Curabitur eu purus quis ante accumsan fringilla a in ex. Nullam varius volutpat semper. Fusce id orci lacus. Sed vitae euismod eros. Duis porttitor, elit a dapibus suscipit, quam dolor rhoncus dui, sit amet gravida mi nisi vel diam. Pellentesque facilisis faucibus arcu, sit amet vehicula sapien ullamcorper a. Mauris feugiat orci dolor, sed pretium magna hendrerit nec. Sed non vehicula lorem. Maecenas eu sapien purus. Quisque mollis blandit diam vel faucibus. Donec bibendum finibus porttitor. Etiam eu ligula eu erat accumsan posuere. Praesent at semper ex. Vestibulum posuere id orci quis luctus. Pellentesque nec posuere magna.<br><br>
+                
+                Suspendisse rutrum tortor purus, a bibendum lacus convallis in. Etiam nec porta odio. Nullam molestie nibh nec blandit bibendum. Etiam accumsan eu sem non tincidunt. Nulla facilisi. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Ut vitae elit vel nulla convallis consequat a non sem. Nullam aliquet lorem metus, non vestibulum ante dictum quis. Nunc sit amet massa at orci condimentum varius. Quisque sagittis, tortor eget venenatis mollis, purus nibh vulputate lorem, non viverra dolor eros a velit. Morbi turpis sapien, interdum a justo eu, sollicitudin lacinia metus.</p>            
+                <img src="images/test-image-3" alt="">
+            </section>
+        </div>
 
-   <main>
-        <section id="article1">
-            <h2>Article 1</h2>
-            <p></p>            
-            <img src="" alt="">
-        </section>
-
-        <section id="article2">
-            <h2>Article 2</h2>
-            <p></p>            
-            <img src="" alt="">
-        </section>
-
-        <section id="article3">
-            <h2>Article 3</h2>
-            <p></p>            
-            <img src="" alt="">
-        </section>
-
-        <section id="quote">
-            <div id="background">
-                <img src="" alt="">
-            </div>
-            <p class="quote">
-                Man cannot remake himself without suffering,<br>for he is both the marble and the sculptor.
-            </p>
-        </section>
-
-        <table>
-
+            <section id="quote">
+                <div class="background">
+                    <video loop autoplay muted>
+                        <source src="images/raindrops-dark.mp4" alt="A man's shadow outline.">
+                    </video>
+                </div>
+                <p>
+                Man cannot remake himself without suffering, for he is both the marble and the sculptor.<br><br>&ndash; Alexis Carrel
+                </p>
+            </section>
+        
+        <div id="table-container">
+        <table class="smile"> 
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Type</th>
+                    <th>Smile Size</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Turtle</td>
+                    <td>Shell</td>
+                    <td>Not that big.</td>
+                </tr>
+                <tr>
+                    <td>Chick</td>
+                    <td>Feathers</td>
+                    <td>Not bad, but not huge.</td>
+                </tr>
+                <tr>
+                    <td>Chimpanzee</td>
+                    <td>Fear</td>
+                    <td>Big smile. Very scary.</td>
+                </tr>
+            </tbody>
         </table>
-   </main>
-
-   <footer>
-        <ul class="footer-nav">
-
+        </div>
+    </main>
+    
+    <footer>
+       <ul class="footer-nav">
+           <li>
+               <a href="./index.html"><p>Home</p></a>
+            </li>
+            <li>
+                <a href="./ice/index.html"><p>ICE</p></a>
+            </li>
+            <li>
+                <a href="./wwr/index.html" target="_blank"><p>WWR</p></a>
+            </li>
+            <li>
+                <a href="./about.html"><p>About Me</p></a>
+            </li>
         </ul>
 
         <form>
             <fieldset>
                 <legend>Sign up for my newsletter!</legend>
-                <label for="name">Name:</label>
-                <input type="type" id="name" name="name">
-                
+                <div>
+                <label for="name">Name:</label><br>
+                <input type="type" id="name" name="name" placeholder="John Smith">
+                </div>
+                <div>
+                <label for="email">Email:</label><br>
+                <input type="type" id="email" name="email" placeholder="johnsmith@john.com">
+                </div>
+                <div>
+                <label for="phone">Phone:</label><br>
+                <input type="tel" name="phone" id="phone" placeholder="123-456-7890">
+                </div>
+                <div id="submit-button">
+                <button type="submit">I want to receive your newsletter!</button>
+                </div>
             </fieldset>
         </form>
-   </footer>
+
+        <!-- Gotta do soemthing with this at some point -->
+
+        <div id="logo"><img src="./images/new_logo.png" alt="Kyler logo."></div>
+
+    </footer>
+   </div>
 </body>
 </html>
