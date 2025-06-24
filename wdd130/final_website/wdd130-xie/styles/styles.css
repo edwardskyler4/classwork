@@ -1,0 +1,88 @@
+:root {
+    --primary: #0B0C2A;
+    --secondary: #1E2045;
+    --tertiary: #FFD369;
+    --accent: #EF476F;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2, h3 {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+p, a {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Nav bar */
+nav {
+    width: 100%;
+}
+nav ul {
+    padding: 0;
+    margin: 0;
+    height: 75px;
+    display: flex;
+    list-style: none;
+    background-color: var(--primary);
+}
+nav ul li {
+    display: flex;
+    width: 100%;
+    border-right: 1px solid var(--accent);
+    border-bottom: 1px solid var(--accent);
+}
+nav ul li a {
+    color: var(--tertiary);
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    font-size: 1.2em;
+}
+nav ul li:last-of-type {
+    border-right: 0;
+}
+nav ul li a:hover {
+    background-color: var(--tertiary);
+    color: var(--secondary);
+}
+
+/* Body of the index page */
+#text {
+    height: 700px;
+    padding-top: 75px;
+    background-image:url("../images/hero-img.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-y: center;
+    text-align: center;
+    color: white;
+    background-color: rgba(30, 32, 69, 0.5);
+    background-blend-mode: soft-light;
+}
+#text h1 {
+    font-size: 3.5em;
+    letter-spacing: 0.07em;
+    margin-top: 0;
+    margin-bottom: 65px;
+    color: var(--tertiary);
+    text-shadow: 1px 1px 5px black;
+}
+#text p {
+    max-width: 30%;
+    margin: 0 auto;
+    text-shadow: 1px 1px 3px black;
+}
+
+/* Footer */
+footer {
+    background-color: var(--primary);
+    color: aliceblue;
+}
