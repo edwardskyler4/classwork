@@ -1,0 +1,15 @@
+{
+    "name": "Alex",
+    "id": 12345,
+    "courses": [
+        {
+            "title": "Intro to Python",
+            "credits": 3
+        },
+        {
+            "title": "Web Development",
+            "credits": 3
+        }
+    ],
+    "is_active": true
+}

@@ -9,11 +9,11 @@ CSE 111 Proposal for a Student Chosen Program
 
 
 3. What will you learn from developing this program?
-    I'm going to learn how to make a simple GUI, how to push notifications, and how to use classes, especially if I have time to add a feature where users can input their individual plant types. I'll also be able to learn how to have a program run in the background, making it automatically update and notify me at appropriate times.
+    I'm going to learn how to make a simple GUI, how to write to and read from a json file, and how to use datetime to measure intervals of time.
 
 
 4. What Python modules will your program use?
-    I'm going to use tkinter, datetime, platform, and some notification modules to use depending on the computer system being used (pync, plyer, subprocess).
+    I'm going to use tkinter, datetime, and time.
 
 
 5. Will you separate your Python program into functions that each

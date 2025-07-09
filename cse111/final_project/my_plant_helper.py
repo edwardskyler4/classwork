@@ -25,13 +25,91 @@ If I just do that ^^^^, I can avoid having to use/install 5 of my 7 packages. Ni
 import tkinter
 import datetime
 import time
+import json
+import threading
+from personal_library import validate_int
 
+
+# Use threading to have a thread that runs the timing program. 
+# A function for loading, a function for saving
+# A function for displaying a menu
+# A function for adding plants
+# A function for choosing intervals for plants, which will also start the thread for that interval
+# A function to log out?
 
 
 def main():
-    # collect how often user wants to be notified
-    # get current date
-    ...
+    
+    menu = """
+    1. Check plants and intervals
+    2. Add plant
+    3. Edit interval
+    4. Save data
+    5. Test notification
+    6. Log out
+"""
+    user_choice = 0
+    user_data = fetch_user_specific_data()
+
+    while user_choice != 6:
+        ...
+
+    # I figure I can save the user_data as a dictionary. The key would be the username. Then I could do another dictionary for plant names and quantity, then an int or something for notification regularity.
+
+def fetch_user_specific_data():
+    """
+    This function gets and returns the data of the current user. If a new user is created, it also saves that new user.
+    Params: none
+    Returns: user data
+    """
+    FILENAME = "save_plant.json"
+    all_data = read_json(FILENAME)
+    username = log_in(all_data)
+
+    if username in all_data:
+        user_data = all_data[username]
+    else:
+        all_data[username] = [{}]
+        save_to_json(all_data)
+        user_data = all_data[username]
+    
+    return user_data
+
+def read_json(filename):
+    try:
+        with open(filename, "r") as f:
+            user_data = json.load(f)
+    except FileNotFoundError:
+        print ("Save file not found. Please try again.")
+    return user_data
+
+def log_in(user_data):
+    """
+    Function: log_in
+    This function gets a username from a user, then checks if it's in a dictionary of user data. If it is, it returns the username. If it isn't, it prompts the user to create a new, unique username.
+    Params: the dictionary of user data
+    Returns: the username of the user, or False if they decide to not create a username.
+    """
+    username = input("What is your username? ")
+
+    if username not in user_data:
+        make_profile = input("It looks like we don't have you in our system. Would you like to create a profile? (y/n) ")
+
+        if make_profile.lower in ["y", "yes"]:
+            print(f"Great! Your username from now on is {username}. Don't forget it!")
+        else:
+            print("Okay, goodbye!")
+            user_data = False
+
+    return username
+
+def save_to_json(user_data):
+    with open("save_plant.json", "w") as f:
+        json.dump(user_data)
+
+
+
+
 
 def generate_gui():
     ...
@@ -43,4 +121,7 @@ def check_date(interval, cur_date):
     ...
 
 def send_notification():
+    ...
+
+def update_plant_info():
     ...
