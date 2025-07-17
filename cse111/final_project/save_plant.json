@@ -1,5 +1,14 @@
 {
-    "kyler": [
-        {}
-    ]
+    "kyler": {
+        "Monstera": [
+            "Monstera",
+            "1",
+            "bi-weekly"
+        ],
+        "Pothos": [
+            "Pothos",
+            "3",
+            "weekly"
+        ]
+    }
 }

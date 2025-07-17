@@ -40,18 +40,32 @@ def main():
     PLANT_NAME_INDEX = 0
     QUANTITY_INDEX = 1
     WATER_FREQUENCY_INDEX = 2
-
     MENU = """
     1. Check plants and intervals
     2. Add plant
-    3. Edit interval
+    3. Edit plant
     4. Save data
     5. Test notification
     6. Log out
 """
+    FILENAME = "save_plant.json"
+
     user_choice = 0
     has_saved = False
-    user_data = fetch_user_specific_data()
+
+    all_data = read_json(FILENAME)
+    username = log_in(all_data)
+
+    if username != False:
+        if username in all_data:
+            user_data = all_data[username]
+        else:
+            all_data[username] = {}
+            save_to_json(all_data)
+            user_data = all_data[username]
+    else:
+        user_data = False
+
     run = False if user_data == False else True
 
     if run == True:
@@ -66,10 +80,10 @@ def main():
             continue
         
 
-        if user_choice == "1":
+        if user_choice == "1": # check plants and intervals # technically works, but not done
             print(user_data) # add more logic for printing to make it prettier
         
-        elif user_choice == "2": # seems to work. Haven't yet tested fully.
+        elif user_choice == "2": # Add plant # seems to work. Haven't yet tested fully.
             plant_run = True
             while plant_run == True:
                 plant_name = input("Name of your plant: ")
@@ -107,7 +121,7 @@ def main():
                     plant_run = False
                     break
 
-                user_data = {plant_name: [plant_name, plant_quantity, water_interval]}
+                user_data[plant_name] = [plant_name, plant_quantity, water_interval]
                 has_saved = False
 
                 print (f"You have sucessfuly added {user_data[plant_name][PLANT_NAME_INDEX]}, \nwith a quantity of {user_data[plant_name][QUANTITY_INDEX]},\nbeing watered on a {user_data[plant_name][WATER_FREQUENCY_INDEX]} schedule.")
@@ -120,18 +134,19 @@ def main():
                     print("\nOkay. Please select an option from the menu options below:")
                     plant_run = False
 
-        elif user_choice == "3":
+        elif user_choice == "3": # edit plant
             ...
 
-        elif user_choice == "4": # finished writing, haven't tested at all
-            save_to_json(user_data)
+        elif user_choice == "4": # Save data # finished writing, have tested a bit
+            all_data[username] = user_data
+            save_to_json(all_data)
             print("\nSuccessfully saved.")
             has_saved = True
         
-        elif user_choice == "5":
+        elif user_choice == "5": # Test notification
             ...
 
-        elif user_choice == "6": # finished writing, haven't yet tested at all
+        elif user_choice == "6": # log out # finished writing, haven't yet tested at all
             if has_saved == False:
                 confirm_save = input("You haven't saved your changes. Are you sure you'd like to quit? (y/n) ")
 
@@ -145,63 +160,41 @@ def main():
                 print ("\nGoodbye!")
 
 
-def fetch_user_specific_data():
-    """
-    This function gets and returns the data of the current user. If a new user is created, it also saves that new user.
-    Params: none
-    Returns: user data
-    """
-    FILENAME = "save_plant.json"
-
-    def read_json(filename):
-        try:
-            with open(filename, "r") as f:
-                user_data = json.load(f)
-        except FileNotFoundError:
-            print ("Save file not found. Please try again.")
-        except json.JSONDecodeError:
-            print("Error: Invalid JSON format in the file.")
-            user_data = {}
-        return user_data
-
-    def log_in(user_data):
-        """
-        Function: log_in
-        This function gets a username from a user, then checks if it's in a dictionary of user data. If it is, it returns the username. If it isn't, it prompts the user to create a new, unique username.
-        Params: the dictionary of user data
-        Returns: the username of the user, or False if they decide to not create a username.
-        """
-        username = input("What is your username? ")
-
-        if username not in user_data:
-            make_profile = input("It looks like we don't have you in our system. Would you like to create a profile? (y/n) ")
-
-            if make_profile.lower() in ["y", "yes"]:
-                print(f"\nGreat! Your username from now on is '{username}'. Don't forget it!")
-            else:
-                print("\nOkay, goodbye!")
-                username = False
-
-        return username
-
-
-    all_data = read_json(FILENAME)
-    username = log_in(all_data)
-
-    if username != False:
-        if username in all_data:
-            user_data = all_data[username]
-        else:
-            all_data[username] = [{}]
-            save_to_json(all_data)
-            user_data = all_data[username]
-    else:
-        user_data = False
-    return user_data
     
+def read_json(filename):
+    try:
+        with open(filename, "r") as f:
+            user_data = json.load(f)
+    except FileNotFoundError:
+        print ("Save file not found. Please try again.")
+    except json.JSONDecodeError:
+        print("Error: Invalid JSON format in the file.")
+        user_data = {}
+    return user_data
+
 def save_to_json(user_data):
     with open("save_plant.json", "w") as f:
         json.dump(user_data, f, indent=4)
+
+def log_in(user_data):
+    """
+    Function: log_in
+    This function gets a username from a user, then checks if it's in a dictionary of user data. If it is, it returns the username. If it isn't, it prompts the user to create a new, unique username.
+    Params: the dictionary of user data
+    Returns: the username of the user, or False if they decide to not create a username.
+    """
+    username = input("What is your username? ")
+
+    if username not in user_data:
+        make_profile = input("It looks like we don't have you in our system. Would you like to create a profile? (y/n) ")
+
+        if make_profile.lower() in ["y", "yes"]:
+            print(f"\nGreat! Your username from now on is '{username}'. Don't forget it!")
+        else:
+            print("\nOkay, goodbye!")
+            username = False
+
+    return username
 
 def start_notification_interval(interval): # I need to figure out how I could have multiple timers running at the same time. Also need to learn how thread works.
     """
